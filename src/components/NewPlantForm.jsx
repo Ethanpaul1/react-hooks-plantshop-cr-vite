@@ -7,16 +7,19 @@ function NewPlantForm({ onAddPlant }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    const plant = { name, image, price: parseFloat(price), inStock: true };
+    // keep price as string in the POST body to match tests
+    const plantToSend = { name, image, price };
 
     fetch("http://localhost:6001/plants", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(plant),
+      body: JSON.stringify(plantToSend),
     })
       .then((r) => r.json())
       .then((newPlant) => {
-        onAddPlant(newPlant);
+        // ensure inStock true locally if backend doesn't provide it
+        const normalized = { ...newPlant, inStock: newPlant.hasOwnProperty("inStock") ? newPlant.inStock : true };
+        onAddPlant(normalized);
         setName("");
         setImage("");
         setPrice("");
