@@ -1,3 +1,4 @@
+// PlantList: renders a list of PlantCard components
 import React from "react";
 import PlantCard from "./PlantCard";
 

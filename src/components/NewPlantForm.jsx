@@ -1,3 +1,4 @@
+// NewPlantForm: controlled form to create a new plant and POST to backend
 import React, { useState } from "react";
 
 function NewPlantForm({ onAddPlant }) {

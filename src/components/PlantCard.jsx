@@ -1,3 +1,4 @@
+// PlantCard: displays a single plant and a toggle for in-stock/out-of-stock
 import React from "react";
 
 function PlantCard({ plant, onToggleStock }) {

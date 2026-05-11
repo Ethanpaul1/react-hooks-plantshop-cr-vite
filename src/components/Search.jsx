@@ -1,3 +1,4 @@
+// Search: controlled input that lifts search state to parent PlantPage
 import React from "react";
 
 function Search({ search, setSearch }) {

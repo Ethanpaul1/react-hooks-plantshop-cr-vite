@@ -1,3 +1,4 @@
+// PlantPage: manages plants state, fetches data, and wires child components
 import React, { useState, useEffect } from "react";
 import NewPlantForm from "./NewPlantForm";
 import PlantList from "./PlantList";
